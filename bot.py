@@ -31,6 +31,7 @@ for event in longpoll.listen():
    print("New event")
 
    if event.type == VkBotEventType.MESSAGE_NEW: # если новое сообщение
-      message_text = event.obj['text']
-      user_id = event.obj['from_id']
+      message = event.obj['message']
+      user = message['from_id']
+      text = message['text']
       vk.messages.send(peer_id=user_id, random_id=0, message=welcome_message) # отправляем

@@ -34,4 +34,4 @@ for event in longpoll.listen():
       message = event.obj['message']
       user = message['from_id']
       text = message['text']
-      vk.messages.send(peer_id=user_id, random_id=0, message=welcome_message) # отправляем
+      vk.messages.send(peer_id=user, random_id=0, message=welcome_message) # отправляем

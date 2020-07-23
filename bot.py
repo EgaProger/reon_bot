@@ -26,7 +26,9 @@ welcome_message = '''
 '''
 
 
+print("Init complete")
 for event in longpoll.listen():
+   print("New event")
 
     if event.type == VkBotEventType.MESSAGE_NEW: # если новое сообщение
         message_text = event.obj['text']
